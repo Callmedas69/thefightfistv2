@@ -1,5 +1,6 @@
 "use client";
 
+import { setOnchainKitConfig } from "@coinbase/onchainkit";
 import { Avatar, Name } from "@coinbase/onchainkit/identity";
 import {
   Swap,
@@ -16,6 +17,8 @@ import {
 import { Wallet, ConnectWallet } from "@coinbase/onchainkit/wallet";
 import { useAccount } from "wagmi";
 import type { Token } from "@coinbase/onchainkit/token";
+
+setOnchainKitConfig({ apiKey: process.env.NEXT_PUBLIC_ONCHAINKIT_API_KEY });
 
 export default function SwapComponents() {
   const { address } = useAccount();
