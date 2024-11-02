@@ -3,12 +3,7 @@
 import "@coinbase/onchainkit/styles.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { headers } from "next/headers";
-import { type ReactNode } from "react";
-import { cookieToInitialState } from "wagmi";
-import { getConfig } from "@/app/wagmi";
-import { Providers } from "@/app/providers";
-import NavbarSwap from "@/components/mainpage/NavbarSwap";
+import OnchainProviders from "@/app/providers";
 
 const geistSans = localFont({
   src: "../../fonts/GeistVF.woff",
@@ -27,18 +22,14 @@ export const metadata: Metadata = {
   description: "Swap $TTS directly ",
 };
 
-export default function SwapLayout(props: { children: ReactNode }) {
-  const initialState = cookieToInitialState(
-    getConfig(),
-    headers().get("cookie")
-  );
+export default function SwapLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div>
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Providers initialState={initialState}>{props.children}</Providers>
-      </div>
-    </div>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <OnchainProviders>{children}</OnchainProviders>
+    </body>
   );
 }
