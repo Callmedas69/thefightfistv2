@@ -60,7 +60,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Hero Image (Right Side) */}
+        {/*Hero Image (Right Side)*/}
         <div className="hidden lg:flex lg:w-2/3 justify-end items-end absolute bottom-0 right-0 z-10">
           <Image
             src={hero}
