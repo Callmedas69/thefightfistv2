@@ -44,13 +44,13 @@ const Hero = () => {
       ></div>
 
       {/* Content Container */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1100px] w-full h-full px-4 lg:px-0 lg:space-x-10 space-y-6 lg:space-y-0">
+      <div className="relative flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-[1350px] w-full h-full px-4 lg:px-0 lg:space-x-20 space-y-6 lg:space-y-0">
         {/* Launch Image and Button (Left Side) */}
         <div className="lg:pl-[5%] lg:w-1/3 flex flex-col items-center z-40 space-y-4">
           <Image
             src={launch}
             alt="launch"
-            className="w-full max-w-[250px] lg:max-w-[250px] h-auto"
+            className="w-[50vw]l max-w-[300px] lg:w-[30vw] lg:max-w-[400px] h-auto"
           />
           <Button
             onClick={scrollToSection}
@@ -60,14 +60,14 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/*Hero Image (Right Side)*/}
-        <div className="hidden lg:flex lg:w-2/3 justify-end items-end absolute bottom-0 right-0 z-10">
+        {/* Hero Image (Right Side) */}
+        <div className="hidden lg:flex lg:w-2/3 justify-end items-end lg:mr-10 absolute bottom-0 right-0 z-10">
           <Image
             src={hero}
             alt="hero"
             width={1000}
             height={1000}
-            className="w-[50vw] max-w-[600px] h-auto"
+            className="w-[50vw] max-w-[700px] lg:max-w-[800px] h-auto"
             priority
           />
         </div>
